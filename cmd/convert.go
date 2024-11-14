@@ -11,7 +11,7 @@ import (
 )
 
 var convertCmd = &cobra.Command{
-	Use: "convert [inputFile] [outputFormat]",
+	Use: "Convert [inputFile] [outputFormat]",
 	Short: "Convert video to another format like mp4, mkv",
 	Args: cobra.ExactArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
@@ -19,7 +19,7 @@ var convertCmd = &cobra.Command{
 		outputFormat := args[1]
 
 		fileBase := strings.TrimSuffix(inputFile, filepath.Ext(inputFile))
-		// outputFile := fmt.Sprintf("%s.%s", inputFile, outputFormat)
+		
 		outputFile := fmt.Sprintf("%s.%s", fileBase, outputFormat)
 
 		err := convertVideo(inputFile, outputFile)
