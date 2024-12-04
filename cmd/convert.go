@@ -1,3 +1,5 @@
+// ==================
+
 package cmd
 
 import (
@@ -19,7 +21,6 @@ var convertCmd = &cobra.Command{
 		outputFormat := args[1]
 
 		fileBase := strings.TrimSuffix(inputFile, filepath.Ext(inputFile))
-		// outputFile := fmt.Sprintf("%s.%s", inputFile, outputFormat)
 		outputFile := fmt.Sprintf("%s.%s", fileBase, outputFormat)
 
 		err := convertVideo(inputFile, outputFile)
