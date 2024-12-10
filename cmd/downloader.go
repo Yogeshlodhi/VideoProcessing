@@ -7,10 +7,30 @@ import (
 	"os"
 	"sync"
 	"time"
+
+	"github.com/spf13/cobra"
 )
 
 const chunkSize = 4 * 1024 * 1024 // 4MB
 const maxWorkerCount = 100        // Number of concurrent workers
+
+var downloadCmd = &cobra.Command{
+	Use: "download [inputfile] [destination]",
+	Short: "Download files faster than before",
+	Args: cobra.ExactArgs(2),
+	Run: func(cmd *cobra.Command, args []string){
+		inputFile := args[0]
+		destination := args[1]
+		err := DownloadFile(inputFile, destination)
+		if err != nil{
+			fmt.Printf("Failed to download: %v\n", err)
+		}
+	},
+}
+
+func init(){
+	rootCmd.AddCommand(downloadCmd)
+}
 
 func DownloadFile(url, dest string) error {
 	startTime := time.Now()
