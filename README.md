@@ -26,8 +26,8 @@ Follow these steps to set up the project locally:
 - **Clone the repository:**
 
   ```bash
-  git clone https://github.com/Yogeshlodhi/VideoProcessingCLI.git
-  cd VideoProcessingCLI
+  git clone https://github.com/Yogeshlodhi/VideoProcessing.git
+  cd VideoProcessing
 
 - **Install Go dependencies: (Make sure you have Go installed on your system)**
   ```bash
@@ -55,11 +55,10 @@ After building the project, you can use the toolkit directly from the command li
 
 - **Download File**
   ```bash
-  ./VideoProcessing compress --input <input_file> --output <output_file> --quality <quality_percentage>
+  ./VideoProcessing download --input <input_file> --output <output_file> 
   ```
-    - input : The path to the input video file.
-    - output : The path for the output trimmed video file.
-    - quality : The desired quality percentage (e.g., 80 for 80% quality).
+    - input : The path to the input file to be downloaded.
+    - output : The path for the output downloaded file.
 
 - **Convert Video Format**
   ```bash
