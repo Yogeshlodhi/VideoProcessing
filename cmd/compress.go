@@ -9,7 +9,7 @@ import (
 
 var compressCmd = &cobra.Command{
 	
-	Use: "Compress [inputFile] [outputFile]",
+	Use: "compress [inputFile] [outputFile]",
 	
 	Short: "Compress video to reduce the files size",
 	

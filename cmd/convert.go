@@ -11,7 +11,7 @@ import (
 )
 
 var convertCmd = &cobra.Command{
-	Use: "Convert [inputFile] [outputFormat]",
+	Use: "convert [inputFile] [outputFormat]",
 	Short: "Convert video to another format like mp4, mkv",
 	Args: cobra.ExactArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {

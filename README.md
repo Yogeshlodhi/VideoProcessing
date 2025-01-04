@@ -35,18 +35,35 @@ Follow these steps to set up the project locally:
 
 ## Usage
 After building the project, you can use the toolkit directly from the command line.
-- **Trim Video**
+- **Know the commands**
   ```bash
-  ./video-tool trim --input <input_file> --start <start_time> --end <end_time> --output <output_file>
+    - go run main.go --help
+
+    A CLI tool built in golang to alter/edit, change video options
+
+    Usage:
+      videoprocess [flags]
+      videoprocess [command]
+
+    Available Commands:
+      completion  Generate the autocompletion script for the specified shell
+      compress    Compress video to reduce the files size
+      convert     Convert video to another format like mp4, mkv
+      download    Download files faster than before
+      help        Help about any command
+      trim        Trim video from start time to end time
+
+- **Download File**
+  ```bash
+  ./VideoProcessing compress --input <input_file> --output <output_file> --quality <quality_percentage>
   ```
     - input : The path to the input video file.
-    - start : The start time (in seconds) for the trim.
-    - end : The end time (in seconds) for the trim.
     - output : The path for the output trimmed video file.
+    - quality : The desired quality percentage (e.g., 80 for 80% quality).
 
 - **Convert Video Format**
   ```bash
-  ./video-tool convert --input <input_file> --output <output_file> --format <desired_format>
+  ./VideoProcessing convert --input <input_file> --output <output_file> --format <desired_format>
   ```
     - input : The path to the input video file.
     - output : The path for the output trimmed video file.
@@ -54,11 +71,19 @@ After building the project, you can use the toolkit directly from the command li
 
 - **Compress Video**
   ```bash
-  ./video-tool compress --input <input_file> --output <output_file> --quality <quality_percentage>
+  ./VideoProcessing compress --input <input_file> --output <output_file> --quality <quality_percentage>
   ```
     - input : The path to the input video file.
     - output : The path for the output trimmed video file.
     - quality : The desired quality percentage (e.g., 80 for 80% quality).
+
+- **Some Test Commands**
+  ```bash
+    - go run main.go convert "C:/Users/Yogesh Kumar/Desktop/testmp4" mkv
+    - go run main.go compress "C:/Users/Yogesh Kumar/Desktop/test.mp4" output.mp4
+
+    - go run main.go download "file_link" "C:\Users\Yogesh Kumar\Desktop\Projects\VideoProcessing\test.mkv"
+   
 
 ## Contributing
 Contributions are always welcome!
